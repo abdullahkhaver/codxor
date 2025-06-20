@@ -23,7 +23,8 @@ const userSchema = new mongoose.Schema(
     },
     profilePic: {
       type: String,
-      default: '',
+      default:
+        'https://t3.ftcdn.net/jpg/05/61/46/90/360_F_561469055_MIvaD68qP2Y66hfVAa4tX6XskuJQe3nG.jpg',
     },
     email: {
       type: String,

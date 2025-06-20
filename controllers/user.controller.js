@@ -61,8 +61,36 @@ const updateUserProfile = async (req, res) => {
   }
 };
 
+const updateUserAvatar = async (req, res) => {
+  try {
+    console.log('REQ.FILE:', req.file);
+    console.log('REQ.USER:', req.user);
+
+    const userId = req.user._id;
+    const imageUrl = req.file?.path;
+
+    if (!imageUrl) {
+      return res.status(400).json({ message: 'No image uploaded' });
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      { profilePic: imageUrl },
+      { new: true },
+    ).select('-password');
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    console.error('Error updating avatar:', error);
+    res.status(500).json({ message: 'Failed to update avatar' });
+  }
+};
+
+
+
 module.exports = {
   getUsersForSidebar,
   getUserByUsername,
   updateUserProfile,
+  updateUserAvatar,
 };

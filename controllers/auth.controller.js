@@ -19,8 +19,8 @@ const signup = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
-    const girlProfilePic = `https://avatar.iran.liara.run/public/girl?username=${username}`;
+    const boyProfilePic = `https://t3.ftcdn.net/jpg/05/61/46/90/360_F_561469055_MIvaD68qP2Y66hfVAa4tX6XskuJQe3nG.jpg`;
+    const girlProfilePic = `https://t3.ftcdn.net/jpg/05/61/46/90/360_F_561469055_MIvaD68qP2Y66hfVAa4tX6XskuJQe3nG.jpg`;
 
     const newUser = new User({
       fullName,
@@ -44,7 +44,7 @@ const signup = async (req, res) => {
       res.status(400).json({ error: 'Invalid user data' });
     }
   } catch (error) {
-    console.log('Error in signup controller', error.message);
+    console.error('Error in signup controller:', error); 
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
