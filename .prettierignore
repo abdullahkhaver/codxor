@@ -1,0 +1,9 @@
+# Dependency folders
+**/node_modules
+
+# Build outputs
+**/build
+**/dist
+
+# Other ignores
+package-lock.json
