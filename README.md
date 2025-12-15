@@ -2,7 +2,7 @@
 
 A real-time chat application built using the MERN (MongoDB, Express, React, Node.js) stack.
 
-## 🚀 Setup & Installation
+##  Setup & Installation
 
 Instructions on how to run the application locally.
 
@@ -14,9 +14,7 @@ Instructions on how to run the application locally.
 
 ## ⚙️ Technologies Used
 
-- **Frontend:** React, Tailwind CSS, etc.
+- **Frontend:** React, Tailwind CSS, Zustand, etc.
 - **Backend:** Node.js, Express, MongoDB (Mongoose), Socket.io
 
-## 📝 License
-
-(e.g., MIT)
+Developed By Abdullah Khaver
